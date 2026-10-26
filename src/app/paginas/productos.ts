@@ -57,10 +57,12 @@ const TAM = 8;
                     <td data-label="Estado"><span class="tag" [class]="estado(p)[1]">{{ estado(p)[0] }}</span></td>
                     @if (puedeAcciones) {
                       <td data-label="Acciones">
-                        @if (puedeEditar && p.isActive) { <button class="btn s" type="button" (click)="editar(p)">Editar</button> }
-                        @if (puedeDesactivar) {
-                          <button class="btn s" [class.d]="p.isActive" type="button" (click)="cambiarActivo(p)">{{ p.isActive ? 'Desactivar' : 'Reactivar' }}</button>
-                        }
+                        <div class="acc">
+                          @if (puedeEditar && p.isActive) { <button class="btn s" type="button" (click)="editar(p)">Editar</button> }
+                          @if (puedeDesactivar) {
+                            <button class="btn s" [class.d]="p.isActive" type="button" (click)="cambiarActivo(p)">{{ p.isActive ? 'Desactivar' : 'Reactivar' }}</button>
+                          }
+                        </div>
                       </td>
                     }
                   </tr>

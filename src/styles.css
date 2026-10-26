@@ -43,6 +43,7 @@ input[aria-invalid],select[aria-invalid]{border-color:var(--re)}em.fe{font-style
 form.f{display:grid;gap:.85rem}.r2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.acts{display:flex;gap:.5rem;justify-content:flex-end}
 .btn{font:inherit;cursor:pointer;border:1px solid var(--bd);background:var(--pn);color:var(--tx);border-radius:6px;padding:.5rem .95rem;display:inline-flex;gap:.4rem;align-items:center;justify-content:center}
 .btn:disabled{opacity:.45;cursor:default}.btn.p{background:var(--btn);border-color:var(--btn);color:var(--btnt)}.btn.d{color:var(--re)}.btn.s{padding:.2rem .65rem;font-size:.82rem}
+.acc{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}.acc select{width:auto}
 .bar{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}.bar .sp{flex:1}
 .chip{font:inherit;font-size:.82rem;cursor:pointer;border:1px solid var(--bd);background:var(--pn);color:var(--mu);border-radius:14px;padding:.2rem .8rem}.chip.on{background:var(--pus);color:var(--pu);border-color:transparent;font-weight:500}
 .tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem}
@@ -72,7 +73,7 @@ aside{position:static;width:auto;flex-direction:row;flex-wrap:wrap;align-items:c
 main{margin-left:0}.two2,.split.two{grid-template-columns:1fr}.top,#v{padding-left:1rem;padding-right:1rem}.msg{margin-left:1rem;margin-right:1rem}}
 @media(max-width:640px){.tw{overflow:visible}table,tbody,tr,td{display:block}thead{display:none}
 tr{border:1px solid var(--bd);border-radius:8px;margin-bottom:.6rem;padding:.3rem .7rem}td{display:flex;justify-content:space-between;gap:1rem;white-space:normal;border:0;padding:.3rem 0;text-align:right}
-td::before{content:attr(data-label);color:var(--mu);font-size:.78rem;text-align:left}.top input{max-width:none}.top{flex-wrap:wrap}}
+td::before{content:attr(data-label);color:var(--mu);font-size:.78rem;text-align:left}.acc{justify-content:flex-end}.top input{max-width:none}.top{flex-wrap:wrap}}
 @media print{aside,.top,.bar,.acts,.pgr,.msg{display:none!important}main{margin:0}body{background:#fff}}
 
 .msg{display:block}

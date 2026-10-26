@@ -72,18 +72,22 @@ const CLAVE = /^(?=.*[A-Za-z])(?=.*\d).*$/;
                   @if (puedeEditar) {
                     <td data-label="Asignar rol">
                       @if (u.id !== sesion.usuario()?.id && roles().length) {
-                        <select style="min-width:11rem" [attr.aria-label]="'Rol de ' + u.fullName" (change)="rolElegido.set({ id: u.id, rol: $any($event.target).value })">
-                          @for (r of roles(); track r.id) { <option [value]="r.id" [selected]="r.id === u.role.id">{{ nombreRol(r) }}</option> }
-                        </select>
-                        @if (rolElegido()?.id === u.id && rolElegido()?.rol !== u.role.id) {
-                          <button class="btn s p" type="button" (click)="cambiarRol(u)">Guardar</button>
-                        }
+                        <div class="acc">
+                          <select style="min-width:11rem" [attr.aria-label]="'Rol de ' + u.fullName" (change)="rolElegido.set({ id: u.id, rol: $any($event.target).value })">
+                            @for (r of roles(); track r.id) { <option [value]="r.id" [selected]="r.id === u.role.id">{{ nombreRol(r) }}</option> }
+                          </select>
+                          @if (rolElegido()?.id === u.id && rolElegido()?.rol !== u.role.id) {
+                            <button class="btn s p" type="button" (click)="cambiarRol(u)">Guardar</button>
+                          }
+                        </div>
                       } @else { <span class="sm mu">—</span> }
                     </td>
                     <td data-label="Acciones">
                       @if (u.id !== sesion.usuario()?.id) {
-                        <button class="btn s" [class.d]="u.isActive" type="button" (click)="alternar(u)">{{ u.isActive ? 'Desactivar' : 'Activar' }}</button>
-                        <button class="btn s" type="button" (click)="abrirReinicio(u)">Restablecer clave</button>
+                        <div class="acc">
+                          <button class="btn s" [class.d]="u.isActive" type="button" (click)="alternar(u)">{{ u.isActive ? 'Desactivar' : 'Activar' }}</button>
+                          <button class="btn s" type="button" (click)="abrirReinicio(u)">Restablecer clave</button>
+                        </div>
                       }
                     </td>
                   }
@@ -172,8 +176,10 @@ const CLAVE = /^(?=.*[A-Za-z])(?=.*\d).*$/;
                   @for (r of roles(); track r.id) {
                     <td [attr.data-label]="r.name">
                       @if (cambios()[r.id]) {
-                        <button class="btn s p" type="button" (click)="guardarRol(r)">Guardar</button>
-                        <button class="btn s" type="button" (click)="descartar(r)">Descartar</button>
+                        <div class="acc">
+                          <button class="btn s p" type="button" (click)="guardarRol(r)">Guardar</button>
+                          <button class="btn s" type="button" (click)="descartar(r)">Descartar</button>
+                        </div>
                       } @else if (!r.isSystem) {
                         <button class="btn s d" type="button" (click)="eliminarRol(r)">Eliminar</button>
                       }
